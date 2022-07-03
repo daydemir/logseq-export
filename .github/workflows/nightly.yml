@@ -1,8 +1,8 @@
 name: Nightly Build
 
 on:
-  schedule: # Every 5 minutes
-    - cron: '*/5 * * * *'
+  schedule: # Every 15 minutes
+    - cron: '*/15 * * * *'
 
 jobs:
   call-build-docker:
