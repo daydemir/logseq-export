@@ -79,7 +79,7 @@ export async function loadLocalGraph(page, path) {
 async function publish(page, graphDistPath) {
   let distPathExists = false;
 
-  function checkGraphDistPathExist() {
+  function checkGraphJSExists() {
     try {
       if (
         distPathExists ||
@@ -87,13 +87,13 @@ async function publish(page, graphDistPath) {
           fs.statSync(path.join(graphDistPath, "static")).isDirectory())
       ) {
         if (!distPathExists) {
-          console.log("checkGraphDistPathExist: true");
+          console.log("checkGraphJSExists: true");
         }
         distPathExists = true;
         return true;
       }
     } catch (err) {
-      console.log("checkGraphDistPathExist: false");
+      console.log("checkGraphJSExists: false");
       return false;
     }
   }
@@ -123,7 +123,8 @@ async function publish(page, graphDistPath) {
   await delay(1000);
 
   let TTT = 120;
-  while (!checkGraphDistPathExist() || checkGraphPublishing()) {
+  console.log(fs.readdirSync(graphDistPath))
+  while (!checkGraphJSExists() || checkGraphPublishing()) {
     await delay(1000);
     TTT--;
     if (TTT === 0) {
