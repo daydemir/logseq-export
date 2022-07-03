@@ -1,8 +1,9 @@
 name: Nightly Build
 
 on:
-  schedule: # Every 15 minutes
-    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  schedule: # Every day
+    - cron: '* */23 * * *'
 
 jobs:
   call-build-docker:
