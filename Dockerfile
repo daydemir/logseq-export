@@ -2,7 +2,7 @@
 ARG LOGSEQ_TAG
 
 # Builder image
-FROM ghcr.io/pengx17/logseq-base:${LOGSEQ_TAG}
+FROM ghcr.io/daydemir/logseq-base:${LOGSEQ_TAG}
 
 WORKDIR /home/logseq
 

@@ -1,5 +1,5 @@
 {
-  "name": "logseq-publish",
+  "name": "logseq-export",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pengx17/logseq-publish.git"
+    "url": "git+https://github.com/daydemir/logseq-export.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pengx17/logseq-publish/issues"
+    "url": "https://github.com/daydemir/logseq-export/issues"
   },
-  "homepage": "https://github.com/pengx17/logseq-publish#readme",
+  "homepage": "https://github.com/daydemir/logseq-export#readme",
   "dependencies": {
     "electron": "15.1.2",
     "playwright": "^1.19.2",
