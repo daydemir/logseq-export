@@ -32,7 +32,7 @@ runs:
       run: mkdir -p ${{ github.workspace }}/${{ inputs.dest }}
     - uses: addnab/docker-run-action@v3
       with:
-        image: "ghcr.io/pengx17/logseq-publish:${{ inputs.version }}"
+        image: "ghcr.io/daydemir/logseq-export:${{ inputs.version }}"
         options: |
           -v ${{ github.workspace }}:/home/logseq/graph
         run: |
