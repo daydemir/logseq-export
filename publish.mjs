@@ -155,6 +155,9 @@ async function main() {
     argv.output || graphPath + "-www"
   );
 
+  console.log(graphPath)
+  console.log(graphDistPath)
+
   let graphFolderExists = false;
 
   try {
