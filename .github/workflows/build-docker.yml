@@ -9,7 +9,7 @@ on:
         required: true
         type: string
       publish_tag:
-        description: "Tag of ghcr.io/pengx17/logseq-publish"
+        description: "Tag of ghcr.io/daydemir/logseq-export"
         required: true
         type: string
 
@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           file: Dockerfile.logseq
-          tags: ghcr.io/pengx17/logseq-base:${{ inputs.tag }}
+          tags: ghcr.io/daydemir/logseq-base:${{ inputs.tag }}
           build-args: |
             LOGSEQ_TAG=${{ inputs.tag }}
 
@@ -38,6 +38,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/pengx17/logseq-publish:${{ inputs.publish_tag }}
+          tags: ghcr.io/daydemir/logseq-export:${{ inputs.publish_tag }}
           build-args: |
             LOGSEQ_TAG=${{ inputs.tag }}
