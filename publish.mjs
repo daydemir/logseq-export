@@ -80,38 +80,24 @@ async function publish(page, graphDistPath) {
   let distPathExists = false;
 
   function checkGraphJSExists() {
-    try {
-      if (
-        distPathExists ||
-        (graphDistPath &&
-          fs.statSync(path.join(graphDistPath, "static")).isDirectory())
-      ) {
-        if (!distPathExists) {
-          console.log("checkGraphJSExists: true");
-        }
-        distPathExists = true;
-        return true;
-      }
-    } catch (err) {
-      console.log("checkGraphJSExists: false");
-      return false;
-    }
-  }
-
-  function checkGraphPublishing() {
-    try {
-      if (
-        fs
-          .statSync(path.join(graphDistPath, "static", "js", "publishing"))
-          .isDirectory()
-      ) {
-        console.log("publishing ...");
-        return true;
-      }
-    } catch (err) {
-      console.log("publishing ... done");
-      return false;
-    }
+    return true;
+    // try {
+    //   fs.readdirSync(path.join(graphDistPath))
+    //   if (
+    //     distPathExists ||
+    //     (graphDistPath &&
+    //       fs.statSync(path.join(graphDistPath, "static")).isDirectory())
+    //   ) {
+    //     if (!distPathExists) {
+    //       console.log("checkGraphJSExists: true");
+    //     }
+    //     distPathExists = true;
+    //     return true;
+    //   }
+    // } catch (err) {
+    //   console.log("checkGraphJSExists: false");
+    //   return false;
+    // }
   }
 
   await setMockedOpenDirPath(page, graphDistPath);
@@ -124,7 +110,7 @@ async function publish(page, graphDistPath) {
 
   let TTT = 120;
   console.log(fs.readdirSync(graphDistPath))
-  while (!checkGraphJSExists() || checkGraphPublishing()) {
+  while (!checkGraphJSExists()) {
     await delay(1000);
     TTT--;
     if (TTT === 0) {
