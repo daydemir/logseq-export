@@ -118,7 +118,7 @@ async function publish(page, graphDistPath) {
 
   await page.click(".button >> i.ti-dots");
   await page.click("a.menu-link >> text=Export graph");
-  await page.click(`a:text("Export as JSON")`);
+  await page.click(`a:text("Export public pages")`);
 
   await delay(1000);
 
